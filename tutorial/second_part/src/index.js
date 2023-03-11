@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import logo from './logo.svg';
+import './App.css';
+import MyBody from './views/body';
+import Header from './views/Header';
+
 
 // import './index.css';
 // import App from './App';
@@ -27,41 +30,11 @@ import logo from './logo.svg';
 
 function ReturnPage() {
   return (
-    <><Header /><Body /></>
+    <><Header /><MyBody /></>
   )
 }
 
-function Header() {
-  return (
-    <header>
-      <nav>
-        <img src={logo} className="App-logo" alt="logo" width="20%" />
-      </nav>
-    </header>
-  )
-}
 
-function Body() {
-  return (
-    <div>
-      {/* <img src={logo} className="App-logo" alt="logo" width="20%" /> */}
-      <h1>
-        Fun Facts about React
-      </h1>
-      <ul>
-        <li>
-          Was first released in 2013
-        </li>
-        <li>
-          Was originally created by Jordan Walke
-        </li>
-        <li>
-          Has well over 100k stars on GIthub
-        </li>
-      </ul>
-    </div>
-  )
-}
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
