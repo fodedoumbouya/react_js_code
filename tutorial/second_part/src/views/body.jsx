@@ -1,6 +1,21 @@
 import React, { Component } from "react";
 
 class MyBody extends Component {
+	state = {
+		count: 0,
+		texts: [
+			"Was first released in 2013",
+			"Was originally created by Jordan Walke",
+			"Has well over 100k stars on GIthub"
+		],
+	}
+	testTextsNotEmpty() {
+		if (this.state.texts.length === 0) return <p>The list is empty</p>
+		return <ul>
+
+			{this.state.texts.map(text => <li key={text}>{text}</li>)}
+		</ul>
+	}
 	render() {
 		return (
 			<React.Fragment>
@@ -8,17 +23,7 @@ class MyBody extends Component {
 				<h1>
 					Fun Facts about React
 				</h1>
-				<ul>
-					<li>
-						Was first released in 2013
-					</li>
-					<li>
-						Was originally created by Jordan Walke
-					</li>
-					<li>
-						Has well over 100k stars on GIthub
-					</li>
-				</ul>
+				{this.testTextsNotEmpty()}
 			</React.Fragment>
 		)
 	}
