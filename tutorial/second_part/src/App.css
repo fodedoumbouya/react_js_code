@@ -35,6 +35,12 @@
 
 }
 
+.counterView {
+  display: grid;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
 .nav-items {
   list-style: none;
   display: flex;

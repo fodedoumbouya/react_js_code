@@ -18,13 +18,13 @@ class MyBody extends Component {
 	}
 	render() {
 		return (
-			<React.Fragment>
+			<React.StrictMode>
 				{/* <img src={logo} className="App-logo" alt="logo" width="20%" /> */}
 				<h1>
 					Fun Facts about React
 				</h1>
 				{this.testTextsNotEmpty()}
-			</React.Fragment>
+			</React.StrictMode>
 		)
 	}
 }

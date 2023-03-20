@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css';
-import MyBody from './views/body';
-import Header from './views/Header';
+// import MyBody from './views/body';
+// import MyBottun from './views/button';
+// import Header from './views/Header';
+// import Counters from './views/counters';
+import App from './App';
 
 
 // import './index.css';
@@ -28,15 +31,15 @@ import Header from './views/Header';
 // console.log(page)
 
 
-function ReturnPage() {
-  return (
-    <><Header /><MyBody /></>
-  )
-}
+// function ReturnPage() {
+//   return (
+//     <><Header /><MyBody />  <Counters /> </>
+//   )
+// }
 
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-
-root.render(<ReturnPage />)
+//ReturnPage
+root.render(<App />)
