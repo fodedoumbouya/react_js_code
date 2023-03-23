@@ -13,7 +13,7 @@ const sidebarNavItems = [
         display: 'Class',
         icon: <i className='bx bx-folder'></i>,
         to: '/class',
-        section: 'class'
+        section: 'class',
     },
     {
         display: 'Calendar',
@@ -34,6 +34,7 @@ const sidebarNavItems = [
         section: 'user'
     },
 
+
 ]
 
 const Sidebar = () => {
@@ -53,9 +54,11 @@ const Sidebar = () => {
 
     // change active index
     useEffect(() => {
+
         const curPath = window.location.pathname.split('/')[1];
         const activeItem = sidebarNavItems.findIndex(item => item.section === curPath);
         setActiveIndex(curPath.length === 0 ? 0 : activeItem);
+
     }, [location]);
 
     return <div className='sidebar'>

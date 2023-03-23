@@ -4,10 +4,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppLayout from './components/layout/AppLayout';
 // import Blank from './pages/Blank';t
 import Home from './pages/Home'
-import Class from './pages/Class'
+import Class from './pages/class/Class'
 import CalendarView from './pages/Calendar'
 import Grade from './pages/Grade'
 import User from './pages/User'
+import Notes from "./pages/class/notes";
+import Devoirs from './pages/class/devoirs';
 
 function App() {
     return (
@@ -19,7 +21,14 @@ function App() {
                     <Route path='/calendar' element={<CalendarView title="Calendar" />} />
                     <Route path='/grade' element={<Grade title="Grade" />} />
                     <Route path='/user' element={<User title="User" />} />
+
+                    {/* Sub-Routes */}
+
+                    <Route path="/class/notes" element={<Notes />} />
+                    <Route path="/class/devoirs" element={<Devoirs />} />
+
                 </Route>
+
             </Routes>
         </BrowserRouter>
     );

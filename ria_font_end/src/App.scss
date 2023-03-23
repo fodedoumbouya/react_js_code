@@ -163,14 +163,87 @@ h2 {
 
 .class_view_body_content {
     display: flex;
+    height: 35px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    align-items: center;
+    // justify-content: space-around;
 }
 
-.class_view_body_content p {
-    margin-right: 10px;
+.class_view_body_content .head_cv {
+    // background-color: #308efe;
+    // color: red;
+    width: 45%;
+    text-align: start;
+    padding-left: 10px;
+
 }
 
-.class_view_body_content_buttn {
+.class_view_body_content .buttn_cv {
     display: flex;
-    margin-left: 0px;
-    margin-left: 42.5%;
+    // background-color: orange;
+    // color: red;
+    width: 25%;
+    text-align: start;
+    justify-content: space-between;
+}
+
+.class_view_body_content .buttn_cv .rtp,
+.rn {
+    cursor: pointer;
+    border: 1px solid #308efe;
+    background-color: #308efe;
+    color: #fff;
+    box-shadow: 1px 1px 1px #308efe;
+    width: 45%;
+    height: 25px;
+}
+
+.class_notes_view .head_nv {
+    display: flex;
+
+}
+
+.class_notes_view .head_nv h3 {
+    font-size: larger;
+    font-weight: 400;
+    color: gray;
+}
+
+.class_notes_view .head_nv h4 {
+    font-size: larger;
+    margin-left: 10px;
+}
+
+.class_notes_view .class_notes_view_body {
+    height: 40%;
+    width: 78%;
+    background-color: #fff;
+    position: absolute;
+    top: 20ch;
+    left: auto;
+    box-shadow: 5px 0px 5px #308efe;
+}
+
+.class_notes_view .class_notes_view_footer {
+    height: 20%;
+    width: 78%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 10ch;
+    left: auto;
+    box-shadow: 5px 0px 5px #308efe;
+}
+
+.head_footer_nv {
+    display: flex;
+    height: 15%;
+    border-bottom: 2px solid #308efe;
+    padding-top: 5px;
+}
+
+.head_footer_nv h3 {
+    width: 40%;
+    margin-left: 10px;
+    top: 10px;
 }
