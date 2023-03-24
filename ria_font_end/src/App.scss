@@ -11,6 +11,8 @@
 .height600 {
     position: relative;
     height: 600px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px #308efe;
 }
 
 .examples--header {
@@ -112,10 +114,12 @@ h2 {
 .calendar_view {
     height: 70ch;
     width: 500px;
-    // background-color: #308efe;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px #308efe;
     position: absolute;
     top: 20ch;
     left: auto;
+
 }
 
 .class_view_head {
@@ -246,4 +250,107 @@ h2 {
     width: 40%;
     margin-left: 10px;
     top: 10px;
+}
+
+.profile_photo_place {
+    height: 40ch;
+    width: 25%;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 3px 3px 3px #fff;
+    border-radius: 10px;
+
+
+
+
+}
+
+.profile_photo_place img {
+    height: 50%;
+    // width: 30%;
+    width: 100%;
+}
+
+.profile_photo_place .small_info {
+    position: relative;
+    top: 20%;
+    // justify-content: center;
+    // text-align: center;
+    // align-items: center;
+}
+
+.profile_photo_place .small_info p {
+    border: 1px solid gray;
+    height: 30px;
+    width: 98%;
+    margin-left: 2%;
+    background-color: #fff;
+}
+
+.student_view {
+    width: 50%;
+    height: 50%;
+    background-color: #ffff;
+    position: absolute;
+    top: 10%;
+    right: 0px;
+    border-radius: 10px;
+
+}
+
+.student_view h6 {
+    font-size: larger;
+    margin-left: 2%;
+}
+
+.student_view .showInfo {
+    display: inline-flex;
+    width: 40%;
+    position: relative;
+    top: 10px;
+    justify-content: space-between;
+    margin: 2%;
+    border-bottom: 1px solid #2b2b2b;
+}
+
+.AppHeader {
+    height: 4%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.AppHeader .left {
+    height: 100%;
+    width: 60%;
+    position: relative;
+    // background-color: red;
+    top: 0px;
+    left: 0px;
+    padding: 1%;
+
+
+}
+
+
+.AppHeader .right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    position: relative;
+    // background-color: blue;
+    top: 0px;
+    right: 0px;
+    justify-content: end;
+    padding: 1%;
+
+}
+
+.AppHeader .right p {
+    margin-right: 20px;
 }

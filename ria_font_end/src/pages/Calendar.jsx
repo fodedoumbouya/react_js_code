@@ -20,8 +20,8 @@ class CalendarView extends Component {
 
 	render() {
 		const localizer = momentLocalizer(moment);
-		const title = this.props.title;
-		console.log(title)
+		// const title = this.props.title;
+		// console.log(title)
 		return (
 			<div className="height600">
 				<Calendar
