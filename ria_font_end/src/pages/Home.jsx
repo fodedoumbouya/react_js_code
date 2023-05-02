@@ -19,6 +19,16 @@ class Home extends Component {
 					<p>Total Teacher</p>
 					<p>Total class</p>
 				</div>
+
+				<div className="row align-items-md-stretch mt-4">
+					<div className="col">
+						<div className="welcome">
+							<h3>Welcome to RIA School!</h3>
+							<p><i className="bi bi-emoji-heart-eyes"></i> Thanks for your love and support.</p>
+						</div>
+					</div>
+				</div>
+
 				<div className="calendar_view">
 					<Calendar
 						localizer={localizer}
@@ -30,6 +40,8 @@ class Home extends Component {
 
 					/>
 				</div>
+
+				<div className="new_div"></div>
 
 			</React.Fragment >
 		);

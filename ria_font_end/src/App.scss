@@ -8,11 +8,14 @@
 @import '../src/sass/addstyles.scss';
 @import '../src/sass/styles.scss';
 
+@import '~bootstrap/scss/bootstrap';
+
 .height600 {
     position: relative;
     height: 600px;
     background-color: #fff;
     box-shadow: 5px 5px 5px #308efe;
+    top: 5ch;
 }
 
 .examples--header {
@@ -115,12 +118,32 @@ h2 {
     height: 70ch;
     width: 500px;
     background-color: #fff;
-    box-shadow: 5px 5px 5px #308efe;
+    box-shadow: 1px 1px 1px #308efe;
     position: absolute;
-    top: 20ch;
+    top: 30ch;
     left: auto;
+    right: 10px;
 
 }
+
+.welcome {
+    padding: 3ch;
+    color: #fff;
+    background-color: #308efe;
+    border-radius: 3ch;
+
+}
+
+.new_div {
+    height: 70ch;
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px #308efe;
+    position: absolute;
+    top: 30ch;
+    left: auto;
+}
+
 
 .class_view_head {
     display: flex;
@@ -201,6 +224,7 @@ h2 {
     box-shadow: 1px 1px 1px #308efe;
     width: 45%;
     height: 25px;
+
 }
 
 .class_notes_view .head_nv {
@@ -238,6 +262,36 @@ h2 {
     left: auto;
     box-shadow: 5px 0px 5px #308efe;
 }
+
+//---
+
+.class_devoirs_view .head_nv {
+    display: flex;
+
+}
+
+.class_devoirs_view .head_nv h3 {
+    font-size: larger;
+    font-weight: 400;
+    color: gray;
+}
+
+.class_devoirs_view .head_nv h4 {
+    font-size: larger;
+    margin-left: 10px;
+}
+
+.class_devoirs_view .class_notes_view_body {
+    height: 40%;
+    width: 78%;
+    background-color: #fff;
+    position: absolute;
+    top: 20ch;
+    left: auto;
+    box-shadow: 5px 0px 5px #308efe;
+}
+
+//--
 
 .head_footer_nv {
     display: flex;
@@ -353,4 +407,10 @@ h2 {
 
 .AppHeader .right p {
     margin-right: 20px;
+}
+
+
+.addEvenForm {
+    position: relative;
+    top: 10ch;
 }

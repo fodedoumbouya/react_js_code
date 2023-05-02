@@ -22,10 +22,10 @@ const sidebarNavItems = [
         section: 'calendar'
     },
     {
-        display: 'Grade',
+        display: 'Notice',
         icon: <i className='bx bxs-graduation'></i>,
-        to: '/grade',
-        section: 'grade'
+        to: '/notices',
+        section: 'notices'
     },
     {
         display: 'User',

@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+@import '../src/sass/addstyles.scss';
+@import '../src/sass/styles.scss';
+
+@layer utilities {
+	.hover\:bg-gray-100:hover {
+		background-color: #f0f0f0;
+	}
+}
+
+
+.height600 {
+	@apply relative h-96 bg-white shadow-lg rounded-lg overflow-hidden;
+}
+
+.examples--header {
+	@apply text-center mx-10 my-0;
+}
+
+.dndOutsideSourceExample {
+	@apply flex;
+	@extend .examples--header;
+}
+
+.dndOutsideSourceExample>.inner {
+	@apply flex flex-1 justify-center flex-wrap;
+}
+
+.dndOutsideSourceExample>.inner h4 {
+	@apply text-gray-500 w-full text-lg font-medium mb-4;
+}
+
+
+
+.dndOutsideSourceExample>.inner input[type="checkbox"] {
+	@apply mr-2.5 text-blue-500;
+}
+
+.dndOutsideSourceExample {
+	@extend .examples--header;
+	display: flex;
+
+	>.inner {
+		display: flex;
+		flex: 1;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		h4 {
+			color: grey;
+			width: 100%;
+		}
+
+		div[draggable] {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid gray;
+			border-radius: 4px;
+			width: 100px;
+			margin: 10px;
+			cursor: grab;
+		}
+
+		input[type='checkbox'] {
+			margin-right: 5px;
+		}
+	}
+}
+
+.card {
+	@apply bg-white shadow-md rounded-lg mb-5 p-6 border border-gray-200;
+}
+
+.isDraggable {
+	@apply cursor-grab;
+}
+
+.nonDraggable,
+.nonResizable {
+	@apply bg-blue-200 text-gray-700;
+}
+
+* {
+	@apply box-border m-0 p-0;
+}
+
+body {
+	@apply bg-gray-100 text-gray-700 font-sans antialiased;
+}
+
+a {
+	@apply no-underline text-blue-500;
+}
+
+h2 {
+	@apply font-bold text-gray-800 text-2xl font-serif mb-4;
+}
+
+.head_Info {
+	@apply flex justify-evenly items-center mt-10;
+}
+
+.head_Info p {
+	@apply w-48 h-10 bg-blue-500 text-center text-white text-base pt-2 rounded-lg;
+}
+
+
+.calendar_view {
+	@apply h-[70ch] w-[500px] bg-white shadow-md absolute left-auto right-2.5 top-[20ch] rounded-xl p-4
+}
