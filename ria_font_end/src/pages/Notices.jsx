@@ -36,7 +36,7 @@ function NoticeForm() {
 
 						<Form.Group controlId="formNoticeContent">
 							<Form.Label>Content</Form.Label>
-							<div style={{ backgroundColor: 'white' }}>
+							<div style={{ backgroundColor: 'white', }}>
 								<Editor editorState={editorState} onEditorStateChange={setEditorState} />
 							</div>
 						</Form.Group>

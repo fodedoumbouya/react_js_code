@@ -28,6 +28,17 @@ const sidebarNavItems = [
         section: 'notices'
     },
     {
+        display: 'Filieres',
+        icon: <i className='bx bxs-blanket'></i>,
+        to: '/filieres',
+        section: 'filieres'
+    }, {
+        display: 'Teachers',
+        icon: <i className='bx bx-male-female'></i>,
+        to: '/teachers',
+        section: 'teachers'
+    },
+    {
         display: 'User',
         icon: <i className='bx bx-user'></i>,
         to: '/user',

@@ -120,7 +120,7 @@ h2 {
     background-color: #fff;
     box-shadow: 1px 1px 1px #308efe;
     position: absolute;
-    top: 30ch;
+    top: 32ch;
     left: auto;
     right: 10px;
 
@@ -134,6 +134,12 @@ h2 {
 
 }
 
+.register_head {
+    padding: 1ch;
+    background-color: #fff;
+    text-align: center;
+}
+
 .new_div {
     height: 70ch;
     width: 50%;
@@ -142,6 +148,11 @@ h2 {
     position: absolute;
     top: 30ch;
     left: auto;
+}
+
+.new_div .list-item {
+    position: relative;
+    margin-top: 10px;
 }
 
 
@@ -164,6 +175,66 @@ h2 {
     top: 20ch;
     left: auto;
     box-shadow: 5px 5px 5px #308efe;
+}
+
+.filieres_view_body {
+    height: 30%;
+    width: 78%;
+    background-color: #fff;
+    position: absolute;
+    top: 20ch;
+    left: auto;
+    box-shadow: 5px 5px 5px #308efe;
+}
+
+.filieres_view_body_head {
+    display: flex;
+    height: 15%;
+    border-bottom: 3px solid #308efe;
+    padding-top: 15px;
+    padding-right: 10ch;
+}
+
+
+
+.filieres_view_body_head h3 {
+    margin-left: 10px;
+}
+
+.filieres_view_body .actions {
+    margin-left: 0px;
+    margin-left: 75%;
+}
+
+
+.filieres_view_body_content {
+    display: flex;
+    height: 35px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 5px;
+    // justify-content: space-around;
+}
+
+.filieres_view_body_content .head_cv {
+    // background-color: #308efe;
+    // color: red;
+    width: 92%;
+    text-align: start;
+    padding-left: 10px;
+
+}
+
+.filieres_view_body_content .buttn_cv_p {
+    display: flex;
+    // background-color: orange;
+    // color: red;
+    width: 25%;
+    // height: 32px;
+    text-align: start;
+    justify-content: space-between;
+    // margin-bottom: 10ch;
 }
 
 .class_view_body_head {
@@ -306,65 +377,87 @@ h2 {
     top: 10px;
 }
 
-.profile_photo_place {
-    height: 40ch;
-    width: 25%;
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 3px 3px 3px #fff;
-    border-radius: 10px;
+// .profile_photo_place {
+//     height: 40ch;
+//     width: 25%;
+//     background-color: #fff;
+//     text-align: center;
+//     box-shadow: 3px 3px 3px #fff;
+//     border-radius: 10px;
+// }
 
+// .profile_photo_place img {
+//     height: 50%;
+//     // width: 30%;
+//     width: 100%;
+// }
 
+// .profile_photo_place .small_info {
+//     position: relative;
+//     top: 20%;
+//     // justify-content: center;
+//     // text-align: center;
+//     // align-items: center;
+// }
 
+// .profile_photo_place .small_info p {
+//     border: 1px solid gray;
+//     height: 30px;
+//     width: 98%;
+//     margin-left: 2%;
+//     background-color: #fff;
+// }
 
-}
+// .student_view {
+//     width: 50%;
+//     height: 50%;
+//     background-color: #ffff;
+//     position: absolute;
+//     top: 10%;
+//     right: 0px;
+//     border-radius: 10px;
 
-.profile_photo_place img {
-    height: 50%;
-    // width: 30%;
-    width: 100%;
-}
+// }
 
-.profile_photo_place .small_info {
-    position: relative;
-    top: 20%;
-    // justify-content: center;
-    // text-align: center;
-    // align-items: center;
-}
+// .student_view h6 {
+//     font-size: larger;
+//     margin-left: 2%;
+// }
 
-.profile_photo_place .small_info p {
-    border: 1px solid gray;
-    height: 30px;
-    width: 98%;
-    margin-left: 2%;
-    background-color: #fff;
-}
+// .student_view .showInfo {
+//     display: inline-flex;
+//     width: 40%;
+//     position: relative;
+//     top: 10px;
+//     justify-content: space-between;
+//     margin: 2%;
+//     border-bottom: 1px solid #2b2b2b;
+// }
 
-.student_view {
-    width: 50%;
-    height: 50%;
+.profile_holder {
+    // position: relative;
+    // width: 40%;
+    // background-color: #fff;
+    // box-shadow: 5px 5px 5px #308efe;
+    // top: 5ch;
+    // margin: 0 auto;
     background-color: #ffff;
-    position: absolute;
-    top: 10%;
-    right: 0px;
-    border-radius: 10px;
-
+    padding: 2em 1em;
+    margin: auto;
+    width: 400px;
+    height: 600px;
+    border-radius: 1em;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.205);
 }
 
-.student_view h6 {
-    font-size: larger;
-    margin-left: 2%;
+.profile_holder img {
+    width: 370px;
+    height: 200px;
+    margin-bottom: 30px;
 }
 
-.student_view .showInfo {
-    display: inline-flex;
-    width: 40%;
-    position: relative;
-    top: 10px;
-    justify-content: space-between;
-    margin: 2%;
-    border-bottom: 1px solid #2b2b2b;
+.profile_holder h4 {
+    margin: 15px;
 }
 
 .AppHeader {
@@ -414,3 +507,157 @@ h2 {
     position: relative;
     top: 10ch;
 }
+
+
+
+//-----------------------------------
+
+.login_bg {
+    align-content: center;
+    margin-top: 15%;
+
+}
+
+nav {
+    padding: 30px;
+}
+
+nav a {
+    font-weight: bold;
+    color: #308efe;
+}
+
+
+
+.login-form {
+    background: #fff;
+    width: 500px;
+    margin: 65px auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h1 {
+    padding: 35px 35px 0 35px;
+    font-weight: 300;
+}
+
+.login-form .content {
+    padding: 35px;
+    text-align: center;
+}
+
+.login-form .input-field {
+    padding: 12px 5px;
+}
+
+.login-form .input-field input {
+    font-size: 16px;
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    padding: 10px 1px;
+    border: 0;
+    border-bottom: 1px solid #747474;
+    outline: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+.login-form .input-field input::-webkit-input-placeholder {
+    text-transform: uppercase;
+}
+
+.login-form .input-field input::-moz-placeholder {
+    text-transform: uppercase;
+}
+
+.login-form .input-field input:-ms-input-placeholder {
+    text-transform: uppercase;
+}
+
+.login-form .input-field input::-ms-input-placeholder {
+    text-transform: uppercase;
+}
+
+.login-form .input-field input::placeholder {
+    text-transform: uppercase;
+}
+
+.login-form .input-field input:focus {
+    border-color: #222;
+}
+
+.login-form a.link {
+    text-decoration: none;
+    color: #747474;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.login-form .action {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
+.login-form .action button {
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #e8e9ec;
+    color: #777;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    letter-spacing: 0.2px;
+    outline: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.login-form .act button {
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #e8e9ec;
+    color: #777;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    letter-spacing: 0.2px;
+    outline: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.login-form .action button:hover {
+    background: #d8d8d8;
+}
+
+.login-form .action button:nth-child(1) {
+    background: #308efe;
+    color: #fff;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 4px;
+}
+
+.login-form .action button:nth-child(2):hover {
+    background: #bed7f5;
+}
+
+
+//---------------------------------------

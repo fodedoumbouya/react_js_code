@@ -84,20 +84,26 @@ class User extends Component {
 					<i className='bx bx-user'></i>
 					<h1>Etudiant</h1>
 				</div>
-				<div className="profile_photo_place">
+				<div className="profile_holder">
 					<img src="https://picsum.photos/200/300" alt="" />
-					<h3>Student 2</h3>
-					<p>#ID 3238ue938</p>
-					<div className="small_info">
-						<p>Sex: Male</p>
-						<p>Phone:778847886</p>
-					</div>
+					<h4>#ID: 3238ue938</h4>
+					<h4>Nom: Fode</h4>
+					<h4>Prenom: FFF</h4>
+					<h4>Email: FFF@gamil.com</h4>
+					<h4>Phone:778847886</h4>
 
+					<div>
+						<button
+							className="btn btn-primary"
+							onClick={() => handleClick()}>
+							Edit
+						</button>
+
+					</div>
 				</div>
-				<div className="student_view">
-					<h6>Information de l'etudiant</h6>
-					{studentJSX}
-				</div>
+
+
+
 			</React.Fragment>
 		);
 	}
