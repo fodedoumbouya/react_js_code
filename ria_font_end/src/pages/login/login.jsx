@@ -13,19 +13,43 @@ function Login() {
 		navigate('/signup');
 	}
 
+	function handleToHome() {
+		window.location.href = "/";
+	}
+
 	async function onSubmit(e) {
 		e.preventDefault();
-		// const ok = await this.$refs.confirmDialogue.show({
-		// 	title: 'Error  Login',
-		// 	message: "Votre Email n'est pas correcte",
-		// 	// cancelButton: 'Re-Essayer',
-		// })
-		// // If you throw an error, the method will terminate here unless you surround it wil try/catch
-		// if (ok) {
-		//     alert('You have successfully delete this page.')
-		// } else {
-		//     alert('You chose not to delete this page. Doing nothing now.')
-		// }
+		if (!email || !password) {
+			// If any field is null, display an error message
+			alert("Please fill in all fields");
+			return;
+		}
+		const loginData = {
+			email: email,
+			password: password,
+		}
+		console.log(loginData);
+		loginRequest(loginData)
+	}
+	async function loginRequest(registerData) {
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(registerData)
+		};
+		const response = await fetch('/login', requestOptions);
+		const data = await response.json();
+		console.log(data.data);
+		if (data.code == 200 && data.data[0].email == registerData.email) {
+			alert("Sucess")
+			console.log(data);
+			localStorage.setItem("user", JSON.stringify(data.data[0]));
+			handleToHome();
+		} else {
+			// Incorrect email or password in french language
+			alert("Email ou mot de passe incorrect");
+
+		}
 	}
 
 	return (

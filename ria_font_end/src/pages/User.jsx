@@ -1,109 +1,77 @@
-import React from "react";
-import { Component } from "react";
+
+
+import React, { Component } from "react";
 
 class User extends Component {
-
-	state = {
-		student: [
-			{
-				"Prenom": "fode",
-
-			},
-			{
-				"Nom": "Doumbouya",
-			},
-			{
-				"Email": "jsxjsa@yahoo.com",
-
-			},
-			{
-				"Prenom": "fode",
-
-			},
-			{
-				"Nom": "Doumbouya",
-			},
-			{
-				"Email": "jsxjsa@yahoo.com",
-
-			}, {
-				"Prenom": "fode",
-
-			},
-			{
-				"Nom": "Doumbouya",
-			},
-			{
-				"Email": "jsxjsa@yahoo.com",
-
-			}, {
-				"Prenom": "fode",
-
-			},
-			{
-				"Nom": "Doumbouya",
-			},
-			{
-				"Email": "jsxjsa@yahoo.com",
-
-			}, {
-				"Prenom": "fode",
-
-			},
-			{
-				"Nom": "Doumbouya",
-			},
-			{
-				"Email": "jsxjsa@yahoo.com",
-
-			},
-		]
+	constructor(props) {
+		super(props);
+		this.state = {
+			nom: props.user.nom,
+			prenom: props.user.prenom,
+			editing: false,
+		};
 	}
 
+	handleNomChange = (event) => {
+		this.setState({ nom: event.target.value });
+	};
 
+	handlePrenomChange = (event) => {
+		this.setState({ prenom: event.target.value });
+	};
 
-	showInfo = (title, content) => {
-		console.log(title);
-		return (
-			<div className="showInfo">
-				<h5>{title}:</h5>
-				<p>{content}</p>
-			</div>
-		);
-	}
+	handleEditClick = () => {
+		this.props.changeData(this.state.nom, this.state.prenom);
+		this.setState((prevState) => ({ editing: !prevState.editing }));
+	};
+
 	render() {
-		const student = this.state.student;
-		const studentJSX = student.map((item) => {
-			const key = Object.keys(item)[0];
-			const value = Object.values(item)[0];
-			return this.showInfo(key, value);
-		});
+		const { role, email, id_utilisateur, tel } = this.props.user;
+		const { nom, prenom, editing } = this.state;
+		// const { changeData } = this.props;
+
+
 		return (
 			<React.Fragment>
 				<div className="class_view_head">
-					<i className='bx bx-user'></i>
-					<h1>Etudiant</h1>
+					<i className="bx bx-user"></i>
+					<h1>{role}</h1>
 				</div>
 				<div className="profile_holder">
 					<img src="https://picsum.photos/200/300" alt="" />
-					<h4>#ID: 3238ue938</h4>
-					<h4>Nom: Fode</h4>
-					<h4>Prenom: FFF</h4>
-					<h4>Email: FFF@gamil.com</h4>
-					<h4>Phone:778847886</h4>
+					<h4>#ID: {id_utilisateur}</h4>
+					{editing ? (
+						<input
+							type="text"
+							value={nom}
+							onChange={this.handleNomChange}
+							className="form-control"
+						/>
+					) : (
+						<h4>Nom: {nom}</h4>
+					)}
+					{editing ? (
+						<input
+							type="text"
+							value={prenom}
+							onChange={this.handlePrenomChange}
+							className="form-control"
+						/>
+					) : (
+						<h4>Prenom: {prenom}</h4>
+					)}
+					<h4>Email: {email}</h4>
+					<h4>Phone: {tel}</h4>
 
 					<div>
 						<button
-							className="btn btn-primary"
-							onClick={() => handleClick()}>
-							Edit
+							className={`btn ${editing ? "btn-success" : "btn-primary"}`}
+							onClick={this.handleEditClick}
+						>
+							{editing ? "Save" : "Edit"}
 						</button>
-
 					</div>
 				</div>
-
-
-
 			</React.Fragment>
 		);
 	}

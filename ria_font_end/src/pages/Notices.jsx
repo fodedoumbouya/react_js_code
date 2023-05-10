@@ -4,12 +4,20 @@ import { EditorState, convertToRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
+
+
+
 function NoticeForm() {
 	const [title, setTitle] = useState('');
 	const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (!title) {
+			// If any field is null, display an error message
+			alert("Please fill in all fields");
+			return;
+		}
 		const rawContentState = convertToRaw(editorState.getCurrentContent());
 		const markup = JSON.stringify(rawContentState);
 		const noticeData = {
@@ -17,7 +25,27 @@ function NoticeForm() {
 			content: markup,
 		};
 		console.log(noticeData); // or send this data to a server or another component
+		noticeRequest(noticeData);
 	};
+
+	async function noticeRequest(eventData) {
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(eventData)
+		};
+		const response = await fetch('/notice', requestOptions);
+		const data = await response.json();
+		if (data.code == 200) {
+			alert("Sucess")
+			console.log(data);
+			setTitle("");
+			setEditorState(EditorState.createEmpty());
+		} else {
+			alert(data.message)
+
+		}
+	}
 
 	return (
 		<Container>

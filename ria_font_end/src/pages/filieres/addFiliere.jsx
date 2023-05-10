@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
 
@@ -9,20 +9,66 @@ function AddFiliere() {
 	const [niveau, setNiveau] = useState('');
 	const [nbAnnee, setNbAnnee] = useState('');
 	const [responsable, setResponsable] = useState('');
+	const [listTeacher, setlistTeacher] = useState([]);
+
 
 	const navigate = useNavigate();
 
+
+	useEffect(() => {
+		async function fetchTeacher() {
+			const response = await fetch('/enseignant');
+			const data = await response.json();
+			setlistTeacher(data.data);
+			console.log(listTeacher);
+		}
+
+
+		fetchTeacher();
+
+	}, []);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (!nomFiliere || !description || !niveau || !nbAnnee || !responsable) {
+			// If any field is null, display an error message
+			alert("Please fill in all fields");
+			return;
+		}
 		const courseData = {
 			nom_filiere: nomFiliere,
 			description: description,
 			niveau: niveau,
-			nbAnnee: nbAnnee,
-			responsable: responsable,
+			nombre_annee: nbAnnee,
+			id_responsable: responsable,
 		};
 		console.log(courseData); // or send this data to a server or another component
+		insert(courseData)
 	}
+
+	async function insert(eventData) {
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(eventData)
+		};
+		const response = await fetch('/filieres', requestOptions);
+		const data = await response.json();
+		console.log(data);
+
+		alert(data.message)
+		if (data.code == 200) {
+			setNomFiliere("");
+			setDescription("");
+			setNbAnnee("");
+			setNiveau("");
+			setResponsable("");
+			setlistTeacher([]);
+			window.location.reload(false);
+
+		}
+	}
+
 	function handleClick() {
 		navigate('/filieres');
 	}
@@ -44,7 +90,7 @@ function AddFiliere() {
 							<Form.Control type="text" placeholder="Enter nom de la filiere" onChange={(e) => setNomFiliere(e.target.value)} />
 						</Form.Group>
 						<Form.Group controlId="formFiliere">
-							<Form.Label>Filière</Form.Label>
+							<Form.Label>Niveau</Form.Label>
 							<Form.Control as="select" onChange={(e) => setNiveau(e.target.value)}>
 								<option value="">Selecter le niveau</option>
 								<option value="D">Doctorat</option>
@@ -59,12 +105,12 @@ function AddFiliere() {
 						</Form.Group>
 
 						<Form.Group controlId="formResponsable">
-							<Form.Label>Filière</Form.Label>
+							<Form.Label>Responsable</Form.Label>
 							<Form.Control as="select" onChange={(e) => setResponsable(e.target.value)}>
 								<option value="">Selecter le responsable</option>
-								<option value="Teacher 1">Teacher 1</option>
-								<option value="Teacher 2">Teacher 2</option>
-								<option value="Teacher 3">Teacher 3</option>
+								{listTeacher.map((item, index) => {
+									return <option value={item.id_utilisateur} >{item.responsabilite_ens}</option>
+								})}
 
 							</Form.Control>
 						</Form.Group>

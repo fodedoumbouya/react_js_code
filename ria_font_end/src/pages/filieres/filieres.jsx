@@ -1,27 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 
-function Filieres() {
-	const classData = [
-		"Master Développeur Full Stack",
-		"Master Math",
-		"Master Chemie",
-	];
+function Filieres(propos) {
+	const [listFiliere, setlistFiliere] = useState([]);
+	const { role } = propos.user;
+
+
 	const navigate = useNavigate();
 
-	const showClass = (className, index) => {
+	useEffect(() => {
+		async function fetchFiliere() {
+			const response = await fetch('/filieres');
+			const data = await response.json();
+			setlistFiliere(data.data);
+		}
+
+
+		fetchFiliere();
+
+	}, []);
+
+	const showClass = (item, index) => {
 		return (
 			<div className="filieres_view_body_content">
 				<div className="head_cv">
-					{className}
+					{item.nom_filiere}
 				</div>
-				<div className="buttn_cv_p">
+				{/* <div className="buttn_cv_p">
 					<Button className="" key={index} variant="primary red" type="submit" onClick={() => deleteFiliere()}>
 						Delete
 					</Button>
-				</div>
+				</div> */}
 			</div>
 		);
 	};
@@ -39,16 +50,17 @@ function Filieres() {
 
 				<h1>Mes Filieres</h1>
 			</div>
-			<Button variant="primary" type="submit" onClick={() => handleClick()}>
-				Add
-			</Button>
-
+			{role == 'admin' ?
+				<Button variant="primary" type="submit" onClick={() => handleClick()}>
+					Add
+				</Button> : <h6></h6>
+			}
 			<div className="filieres_view_body">
 				<div className="filieres_view_body_head">
 					<h3>Filieres</h3>
-					<h3 className="actions">Actions</h3>
+					{/* <h3 className="actions">Actions</h3> */}
 				</div>
-				{classData.map((c, index) => showClass(c, index))}
+				{listFiliere.map((item, index) => showClass(item, index))}
 			</div>
 
 

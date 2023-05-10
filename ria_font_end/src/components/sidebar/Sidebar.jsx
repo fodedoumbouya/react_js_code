@@ -2,36 +2,43 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './sidebar.scss';
 
-const sidebarNavItems = [
+const sidebarNavItemsAdmin = [
     {
         display: 'Dashboard',
         icon: <i className='bx bx-home'></i>,
         to: '/',
         section: ''
+
     },
     {
         display: 'Class',
         icon: <i className='bx bx-folder'></i>,
         to: '/class',
-        section: 'class',
+        section: 'class'
+
+
     },
     {
         display: 'Calendar',
         icon: <i className='bx bx-calendar'></i>,
         to: '/calendar',
         section: 'calendar'
+
+
     },
     {
         display: 'Notice',
         icon: <i className='bx bxs-graduation'></i>,
         to: '/notices',
         section: 'notices'
+
     },
     {
         display: 'Filieres',
         icon: <i className='bx bxs-blanket'></i>,
         to: '/filieres',
         section: 'filieres'
+
     }, {
         display: 'Teachers',
         icon: <i className='bx bx-male-female'></i>,
@@ -43,12 +50,88 @@ const sidebarNavItems = [
         icon: <i className='bx bx-user'></i>,
         to: '/user',
         section: 'user'
+
     },
 
 
 ]
 
-const Sidebar = () => {
+const sidebarNavItemsTeacher = [
+    {
+        display: 'Dashboard',
+        icon: <i className='bx bx-home'></i>,
+        to: '/',
+        section: ''
+
+    },
+    {
+        display: 'Class',
+        icon: <i className='bx bx-folder'></i>,
+        to: '/class',
+        section: 'class'
+
+
+    },
+    {
+        display: 'Calendar',
+        icon: <i className='bx bx-calendar'></i>,
+        to: '/calendar',
+        section: 'calendar'
+
+
+    },
+    {
+        display: 'Notice',
+        icon: <i className='bx bxs-graduation'></i>,
+        to: '/notices',
+        section: 'notices'
+
+    },
+    {
+        display: 'User',
+        icon: <i className='bx bx-user'></i>,
+        to: '/user',
+        section: 'user'
+
+    },
+
+
+]
+const sidebarNavItemsStudent = [
+    {
+        display: 'Dashboard',
+        icon: <i className='bx bx-home'></i>,
+        to: '/',
+        section: ''
+
+    },
+    {
+        display: 'Class',
+        icon: <i className='bx bx-folder'></i>,
+        to: '/class',
+        section: 'class'
+
+
+    },
+    {
+        display: 'Calendar',
+        icon: <i className='bx bx-calendar'></i>,
+        to: '/calendar',
+        section: 'calendar'
+
+
+    },
+    {
+        display: 'User',
+        icon: <i className='bx bx-user'></i>,
+        to: '/user',
+        section: 'user'
+
+    },
+]
+
+
+const Sidebar = (propos) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [stepHeight, setStepHeight] = useState(0);
     const sidebarRef = useRef();
@@ -71,6 +154,22 @@ const Sidebar = () => {
         setActiveIndex(curPath.length === 0 ? 0 : activeItem);
 
     }, [location]);
+    let sidebarNavItems = []
+    const enseignant = propos.user.role == "enseignant";
+    const student = propos.user.role == "etudiant";
+    const admin = propos.user.role == "admin";
+
+    if (enseignant) {
+        sidebarNavItems = sidebarNavItemsTeacher;
+    }
+    if (student) {
+        sidebarNavItems = sidebarNavItemsStudent;
+    }
+    if (admin) {
+        sidebarNavItems = sidebarNavItemsAdmin;
+    }
+    // sidebarNavItems = sidebarNavItemsStudent;
+
 
     return <div className='sidebar'>
         <div className="sidebar__logo">
